@@ -1,0 +1,483 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+
+/* Variables */
+:root {
+    --font-family: "Roboto", sans-serf;
+    --normal-font: 400;
+    --bold-font: 700;
+    --bolder-font: 900;
+    --bg-color: #fcfcfc;
+    --primary-color: #4756df;
+    --secondary-color: #ff7235;
+    --primary-shadow: #8b8eaf;
+    --secondary-shadow: #a17a69;
+    --bottom-margin: 0.5rem;
+    --bottom-margin-2: 1rem;
+    --line-height: 1.7rem;
+    --transition: 0.3s;
+}
+
+/* Variables fin */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CSS Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+/* Nav */
+nav {
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3.5rem;
+    background-color: var(--bg-color);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+    color: var(--color-primario);
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav a {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: var(--negrita);
+    transition: var(--transicion);
+}
+
+nav a:hover {
+    color: var(--valor-secundario);
+    border-bottom: 2px solid var(--valor-secundario);
+}
+
+nav ul {
+    display: flex;
+    gap: 1.9rem;
+    list-style: none;
+}
+
+nav ul li {
+    font-size: 1rem;
+}
+
+.menu-hamburguesa {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-primario);
+}
+
+.menu-hamburguesa {
+    color: var(--primary-color);
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* About me */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 68.75rem;
+    margin: auto;
+}
+
+.hero img {
+    margin-top: 1.5rem;
+    height: 37.5rem;
+    width: 37.5rem;
+}
+
+.bio {
+    width: 25rem;
+    padding: 0.625rem;
+    border-radius: 6px;
+    box-shadow: 0px 2px 15px 2px var(--primary-shadow);
+}
+
+.bio h1 {
+    margin-bottom: var(--bottom-margin);
+}
+
+.bio p {
+    line-height: var(--line-height);
+    padding: 0.3rem 0;
+}
+
+.btn-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.6rem 1.4rem;
+    background-color: #00bfa6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-cv i {
+    font-size: 1.1rem;
+}
+
+.btn-cv:hover {
+    background-color: #009e89;
+    transform: translateY(-2px);
+}
+
+
+/* More About me */
+
+.mas-sobre {
+    background-color: var(--bg-color);
+    padding: 1rem 6rem;
+}
+
+.mas-sobre h2 {
+    margin-bottom: var(--bottom-margin);
+    text-align: center;
+}
+
+.mas-sobre p {
+    line-height: var(--line-height);
+    padding: 0.4rem;
+}
+
+.educacion-experiencia {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.educacion,
+.experiencia {
+    flex: 1;
+    min-width: 250px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.educacion h3,
+.experiencia h3 {
+    color: #00bfa6;
+    margin-bottom: 0.8rem;
+}
+
+.educacion ul,
+.experiencia ul {
+    list-style: none;
+    padding: 0;
+}
+
+.educacion li,
+.experiencia li {
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+}
+
+/* Skills */
+
+.habilidades {
+    max-width: 68.75rem;
+    margin: auto;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.encabezado-habilidad {
+    margin-bottom: 1rem;
+}
+
+.contenedor-habilidad img {
+    padding: 1.25rem;
+}
+
+.icon {
+    width: 11.875rem;
+    height: 11.25rem;
+}
+
+.icon-card {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--secondary-shadow);
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Projects */
+
+.proyectos {
+    max-width: 68.75rem;
+    margin: auto;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.titulo-de-proyectos {
+    margin-bottom: 1rem;
+}
+
+.contenedor-de-proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+
+.tarjeta-de-proyectos {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--secondary-shadow);
+    padding: 20px;
+    margin: 10px;
+
+    width: 300px;
+    /* ancho fijo */
+    height: 460px;
+    /* alto fijo para uniformidad */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.project-pic {
+    width: 100%;
+    height: auto;
+    padding: 1.25rem;
+    border-radius: 8px;
+}
+
+.detalle-de-proyectos {
+    flex-grow: 1;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #333;
+    overflow: auto;
+}
+
+.tecnologias-usadas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.tecnologias-usadas img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease;
+}
+
+.tecnologias-usadas img:hover {
+    transform: scale(1.2);
+}
+
+.btn-link {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    margin-top: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    align-self: center;
+}
+
+.btn-link:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-link a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Contact Me */
+
+.contacto {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: var(--bg-color);
+}
+
+.titulo-contacto {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.texto-contacto {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+.iconos-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.icono-red {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.icono-red img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.icono-red:hover {
+    transform: scale(1.1);
+}
+
+.icono-red span {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.footer-item i {
+    color: #00bfa6;
+}
+
+.footer-copy {
+    font-size: 0.875rem;
+    color: #aaa;
+}
+
+/* Responsive Design */
+
+/* En pantallas más pequeñas, mantener visible pero más compacto */
+@media (max-width: 768px) {
+    .navegacion {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+    }
+
+    .navegacion li a {
+        padding: 0.5rem;
+    }
+
+    .menu-hamburguesa {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+    }
+
+    .bio {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .habilidades h2 {
+        font-size: 1.2rem;
+    }
+
+    .icon {
+        width: 6.5rem;
+        /* antes 11.875rem */
+        height: 6.5rem;
+        /* antes 11.25rem */
+    }
+
+    .icon-card {
+        padding: 15px;
+        margin: 8px;
+    }
+}
