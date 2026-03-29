@@ -61,22 +61,22 @@ nav {
 }
 
 nav h1 {
-    color: var(--color-primario);
+    color: var(--primary-color);
     font-size: 1.5rem;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 nav a {
-    color: var(--color-primario);
+    color: var(--primary-color);
     text-decoration: none;
-    font-weight: var(--negrita);
-    transition: var(--transicion);
+    font-weight: var(--bold-font);
+    transition: var(--transition);
 }
 
 nav a:hover {
-    color: var(--valor-secundario);
-    border-bottom: 2px solid var(--valor-secundario);
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 nav ul {
@@ -94,7 +94,7 @@ nav ul li {
     background: none;
     border: none;
     font-size: 2rem;
-    color: var(--color-primario);
+    color: var(--primary-color);
 }
 
 .menu-hamburguesa {
@@ -226,11 +226,11 @@ nav ul li {
     margin-top: 2.5rem;
 }
 
-.encabezado-habilidad {
+.header-habilidadr {
     margin-bottom: 1rem;
 }
 
-.contenedor-habilidad img {
+.contenedor-habilidades img {
     padding: 1.25rem;
 }
 
