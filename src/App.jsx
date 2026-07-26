@@ -5,9 +5,7 @@ import {
   BriefcaseBusiness,
   Code2,
   Download,
-  Github,
   GraduationCap,
-  Linkedin,
   Mail,
   MapPin,
   Menu,
@@ -93,8 +91,8 @@ export default function App() {
               <a className="button secondary" href="/assets/CV%20Abdiel%20Mendoza.pdf" download>Descargar CV <Download size={18} /></a>
             </div>
             <div className="social-row">
-              <a href="https://github.com/Mendo0729" target="_blank" rel="noreferrer" aria-label="GitHub"><Github /></a>
-              <a href="https://www.linkedin.com/in/abdiel-mendoza-8b476b320/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a>
+              <a href="https://github.com/Mendo0729" target="_blank" rel="noreferrer" aria-label="GitHub"><Code2 /></a>
+              <a href="https://www.linkedin.com/in/abdiel-mendoza-8b476b320/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><BriefcaseBusiness /></a>
               <a href="mailto:abdielmendoza2906@gmail.com" aria-label="Correo"><Mail /></a>
             </div>
           </motion.div>
@@ -134,7 +132,7 @@ export default function App() {
                   <p>{project.description}</p>
                   <div className="tags">{project.stack.map(tag => <span key={tag}>{tag}</span>)}</div>
                   <div className="project-links">
-                    <a href={project.repo} target="_blank" rel="noreferrer"><Github size={18} /> Código</a>
+                    <a href={project.repo} target="_blank" rel="noreferrer"><Code2 size={18} /> Código</a>
                     {project.demo && <a href={project.demo} target="_blank" rel="noreferrer">Demo <ArrowUpRight size={18} /></a>}
                   </div>
                 </div>
