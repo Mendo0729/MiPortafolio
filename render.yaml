@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: mi-portafolio
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    autoDeploy: true
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
