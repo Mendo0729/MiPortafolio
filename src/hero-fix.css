@@ -46,6 +46,32 @@
   mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
 }
 
+.social-icons a {
+  display: grid;
+  place-items: center;
+  color: #b8bac4;
+  transition: color .2s ease, opacity .2s ease, transform .2s ease;
+}
+
+.social-icons a:hover {
+  color: #a978ff;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.social-icons svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+}
+
+.contact-social-icon {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.6);
+}
+
 @media (max-width: 1100px) {
   .hero {
     grid-template-columns: minmax(0, 1fr) minmax(380px, .9fr);
