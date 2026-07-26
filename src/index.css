@@ -68,10 +68,16 @@ img { display: block; max-width: 100%; }
 .value-card h3 { margin: 14px 0 8px; font-size: .96rem; }
 .value-card p { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.55; }
 
+.skill-group + .skill-group { margin-top: 34px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,.06); }
+.skill-group-heading { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+.skill-group-heading > svg { flex: 0 0 auto; color: #9a68ff; margin-top: 2px; }
+.skill-group-heading h3 { margin: 0 0 5px; font: 600 1.05rem 'Space Grotesk'; }
+.skill-group-heading p { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.5; }
 .skills-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 16px; }
-.skill-card { min-height: 88px; border: 1px solid var(--line); background: #10121b; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; font-size: .78rem; color: #d8d9df; }
+.skill-card { min-height: 88px; border: 1px solid var(--line); background: #10121b; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; font-size: .78rem; color: #d8d9df; text-align: center; padding: 10px 7px; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+.skill-card:hover { transform: translateY(-3px); border-color: rgba(139,92,246,.45); background: #131622; }
 .skill-card img { width: 34px; height: 34px; object-fit: contain; }
-.skill-symbol { font-size: 2rem; line-height: 1; color: #61dafb; font-weight: 700; }
+.skill-symbol { min-width: 36px; height: 34px; display: grid; place-items: center; font-size: .83rem; line-height: 1; color: #b997ff; font-weight: 700; border-radius: 7px; background: rgba(139,92,246,.12); padding: 0 6px; }
 
 .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .project-card { border: 1px solid var(--line); background: #10121a; border-radius: 8px; overflow: hidden; }
