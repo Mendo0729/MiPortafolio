@@ -18,6 +18,8 @@ import {
 import { useState } from 'react'
 import heroImage from '../assets/img/hero-abdiel-animado.png'
 import bakeryImage from '../assets/img/Casita-Bakery.png'
+import sharedWalletImage from '../assets/img/sharedwallet.png'
+import coinpsiImage from '../assets/img/coinpsi.png'
 import htmlIcon from '../assets/icon/html5.png'
 import cssIcon from '../assets/icon/css3.png'
 import jsIcon from '../assets/icon/js.png'
@@ -77,12 +79,14 @@ const projects = [
   {
     title: 'SharedWallet',
     description: 'Aplicación web para administrar gastos y finanzas compartidas, registrar movimientos, organizar balances y facilitar el control financiero entre varios usuarios.',
+    image: sharedWalletImage,
     stack: ['Finanzas', 'Aplicación web', 'Cloud'],
     site: 'https://sharedwallet.mendotech.lat',
   },
   {
     title: 'Coinpsi',
     description: 'Plataforma web corporativa orientada a presentar servicios, programas y recursos de psicología de forma clara, accesible y profesional para sus usuarios.',
+    image: coinpsiImage,
     stack: ['Plataforma web', 'Servicios', 'Producción'],
     site: 'https://coinpsi.mendotech.lat',
   },
@@ -201,11 +205,7 @@ export default function App() {
           <div className="project-grid">
             {projects.map((project, index) => (
               <motion.article className="project-card" key={project.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .08 }}>
-                {project.image ? (
-                  <img className="project-cover" src={project.image} alt={project.title} />
-                ) : (
-                  <div className="project-cover project-placeholder"><Code2 size={42} /><span>{project.title}</span></div>
-                )}
+                <img className="project-cover" src={project.image} alt={project.title} />
                 <div className="project-body">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
