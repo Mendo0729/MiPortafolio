@@ -16,7 +16,7 @@ import {
   X,
 } from 'lucide-react'
 import { useState } from 'react'
-import profilePhoto from '../assets/img/1.jpg'
+import heroImage from '../assets/img/hero-abdiel-animado.png'
 import portfolioImage from '../assets/img/Portafolio.png'
 import securePassImage from '../assets/img/SecurePass.png'
 import bakeryImage from '../assets/img/Casita-Bakery.png'
@@ -149,10 +149,8 @@ export default function App() {
             </div>
           </motion.div>
 
-          <motion.div className="hero-visual" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .75, delay: .12 }}>
-            <div className="purple-orb" />
-            <div className="dot-pattern" />
-            <img src={profilePhoto} alt="Abdiel Mendoza" />
+          <motion.div className="hero-visual hero-illustration" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .75, delay: .12 }}>
+            <img src={heroImage} alt="Ilustración de Abdiel Mendoza trabajando" />
           </motion.div>
         </section>
 
