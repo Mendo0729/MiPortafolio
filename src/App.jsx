@@ -239,6 +239,15 @@ export default function App() {
             <div className="timeline-item">
               <span className="timeline-dot" />
               <div>
+                <h3>Desarrollador Freelancer</h3>
+                <p><strong>Trabajo independiente</strong></p>
+                <p>Desarrollo de aplicaciones web, automatizaciones y soluciones digitales para proyectos personales, pequeños negocios y clientes independientes. También realizo mantenimiento, soporte técnico y mejoras evolutivas sobre sistemas existentes.</p>
+              </div>
+              <time>2022 — actualidad</time>
+            </div>
+            <div className="timeline-item">
+              <span className="timeline-dot" />
+              <div>
                 <h3>Extractor de Datos</h3>
                 <p><strong>Multipuntos Tecnologías S.A. · Jornada completa</strong></p>
                 <p>Extracción y validación de datos geográficos utilizando software especializado, asegurando la integridad, precisión y calidad de la información recopilada.</p>
