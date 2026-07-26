@@ -1,16 +1,11 @@
 services:
   - type: web
     name: mi-portafolio
-    runtime: node
+    runtime: static
     buildCommand: npm install && npm run build
-    startCommand: npm start
+    staticPublishPath: ./dist
     autoDeploy: true
-    envVars:
-      - key: NODE_VERSION
-        value: 22
-      - key: CONTACT_TO_EMAIL
-        value: abdielmendoza2906@gmail.com
-      - key: RESEND_API_KEY
-        sync: false
-      - key: RESEND_FROM_EMAIL
-        sync: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
