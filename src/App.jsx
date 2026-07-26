@@ -10,6 +10,8 @@ import {
   Mail,
   MapPin,
   Menu,
+  MessageCircle,
+  Phone,
   Rocket,
   Send,
   Users,
@@ -29,7 +31,6 @@ import javaIcon from '../assets/icon/java.png'
 import sqlIcon from '../assets/icon/sql.png'
 import githubIcon from '../assets/icon/github.png'
 import linkedinIcon from '../assets/icon/linkedin.png'
-import instagramIcon from '../assets/icon/instagram.png'
 import emailIcon from '../assets/icon/correo.png'
 
 const navItems = [
@@ -180,10 +181,11 @@ export default function App() {
               <a href="#contacto" className="outline-button">Contáctame <Mail size={17} /></a>
             </div>
             <div className="social-icons">
-              <a href="https://github.com/Mendo0729" target="_blank" rel="noreferrer"><img src={githubIcon} alt="GitHub" /></a>
-              <a href="https://www.linkedin.com/in/abdiel-mendoza-8b476b320/" target="_blank" rel="noreferrer"><img src={linkedinIcon} alt="LinkedIn" /></a>
-              <a href="https://www.instagram.com/abdiel2922/" target="_blank" rel="noreferrer"><img src={instagramIcon} alt="Instagram" /></a>
-              <a href="mailto:abdielmendoza2906@gmail.com"><img src={emailIcon} alt="Correo" /></a>
+              <a href="https://github.com/Mendo0729" target="_blank" rel="noreferrer" aria-label="GitHub"><img src={githubIcon} alt="GitHub" /></a>
+              <a href="https://www.linkedin.com/in/abdiel-mendoza-8b476b320/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><img src={linkedinIcon} alt="LinkedIn" /></a>
+              <a href="mailto:abdielmendoza2906@gmail.com" aria-label="Correo"><img src={emailIcon} alt="Correo" /></a>
+              <a href="tel:+50768883551" aria-label="Llamar"><Phone size={20} /></a>
+              <a href="https://wa.me/50768883551" target="_blank" rel="noreferrer" aria-label="WhatsApp"><MessageCircle size={20} /></a>
             </div>
           </motion.div>
 
@@ -299,6 +301,10 @@ export default function App() {
             <h2>Construyamos una solución</h2>
             <p>¿Necesitas desarrollar una aplicación, automatizar un proceso o implementar una solución tecnológica? Estoy disponible para proyectos y nuevas oportunidades.</p>
             <a href="mailto:abdielmendoza2906@gmail.com"><Mail size={17} /> abdielmendoza2906@gmail.com</a>
+            <a href="tel:+50768883551"><Phone size={17} /> +507 6888-3551</a>
+            <a href="https://wa.me/50768883551" target="_blank" rel="noreferrer"><MessageCircle size={17} /> WhatsApp</a>
+            <a href="https://www.linkedin.com/in/abdiel-mendoza-8b476b320/" target="_blank" rel="noreferrer"><img className="contact-social-icon" src={linkedinIcon} alt="" /> LinkedIn</a>
+            <a href="https://github.com/Mendo0729" target="_blank" rel="noreferrer"><img className="contact-social-icon" src={githubIcon} alt="" /> GitHub</a>
             <span><MapPin size={17} /> Colón, Panamá</span>
             <span><Users size={17} /> Disponible para colaborar</span>
           </div>
