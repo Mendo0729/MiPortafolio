@@ -15,7 +15,8 @@ import {
   Users,
   X,
 } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import logoImage from '../assets/img/logo.png'
 import heroImage from '../assets/img/hero-abdiel-animado.png'
 import bakeryImage from '../assets/img/Casita-Bakery.png'
 import sharedWalletImage from '../assets/img/sharedwallet.png'
@@ -111,15 +112,53 @@ function SkillGrid({ items }) {
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('inicio')
+
+  useEffect(() => {
+    const sections = navItems
+      .map(([, href]) => document.querySelector(href))
+      .filter(Boolean)
+
+    const observer = new IntersectionObserver(
+      entries => {
+        const visibleEntry = entries
+          .filter(entry => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+
+        if (visibleEntry) setActiveSection(visibleEntry.target.id)
+      },
+      { rootMargin: '-24% 0px -58% 0px', threshold: [0.05, 0.2, 0.45, 0.7] },
+    )
+
+    sections.forEach(section => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
+  const handleNavClick = href => {
+    setActiveSection(href.slice(1))
+    setMenuOpen(false)
+  }
 
   return (
     <div className="page-shell">
       <header className="topbar">
-        <a href="#inicio" className="logo" aria-label="Inicio"><Code2 /></a>
+        <a href="#inicio" className="logo" aria-label="Inicio" onClick={() => handleNavClick('#inicio')}>
+          <img src={logoImage} alt="Logo de Abdiel Mendoza" />
+        </a>
         <nav className={menuOpen ? 'main-nav open' : 'main-nav'}>
-          {navItems.map(([label, href]) => (
-            <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
-          ))}
+          {navItems.map(([label, href]) => {
+            const sectionId = href.slice(1)
+            return (
+              <a
+                key={href}
+                href={href}
+                className={activeSection === sectionId ? 'active' : ''}
+                onClick={() => handleNavClick(href)}
+              >
+                {label}
+              </a>
+            )
+          })}
         </nav>
         <a className="cv-button desktop-cv" href="/assets/CV%20Abdiel%20Mendoza.pdf" download>
           Descargar CV <Download size={15} />
@@ -169,33 +208,6 @@ export default function App() {
                 <p>{text}</p>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="skills section-block" id="habilidades">
-          <Label>Habilidades</Label>
-          <h2>Conocimientos técnicos</h2>
-
-          <div className="skill-group">
-            <div className="skill-group-heading">
-              <Code2 size={19} />
-              <div>
-                <h3>Lenguajes que manejo</h3>
-                <p>Lenguajes utilizados para desarrollar interfaces, aplicaciones, automatizaciones y consultas de datos.</p>
-              </div>
-            </div>
-            <SkillGrid items={programmingLanguages} />
-          </div>
-
-          <div className="skill-group">
-            <div className="skill-group-heading">
-              <BookOpen size={19} />
-              <div>
-                <h3>Tecnologías y plataformas</h3>
-                <p>Frameworks, herramientas de desarrollo, plataformas cloud, bases de datos, virtualización y sistemas operativos con los que he trabajado.</p>
-              </div>
-            </div>
-            <SkillGrid items={technologies} />
           </div>
         </section>
 
@@ -251,6 +263,33 @@ export default function App() {
               </div>
               <time>Sept. 2024 — dic. 2024</time>
             </div>
+          </div>
+        </section>
+
+        <section className="skills section-block" id="habilidades">
+          <Label>Habilidades</Label>
+          <h2>Conocimientos técnicos</h2>
+
+          <div className="skill-group">
+            <div className="skill-group-heading">
+              <Code2 size={19} />
+              <div>
+                <h3>Lenguajes que manejo</h3>
+                <p>Lenguajes utilizados para desarrollar interfaces, aplicaciones, automatizaciones y consultas de datos.</p>
+              </div>
+            </div>
+            <SkillGrid items={programmingLanguages} />
+          </div>
+
+          <div className="skill-group">
+            <div className="skill-group-heading">
+              <BookOpen size={19} />
+              <div>
+                <h3>Tecnologías y plataformas</h3>
+                <p>Frameworks, herramientas de desarrollo, plataformas cloud, bases de datos, virtualización y sistemas operativos con los que he trabajado.</p>
+              </div>
+            </div>
+            <SkillGrid items={technologies} />
           </div>
         </section>
 
