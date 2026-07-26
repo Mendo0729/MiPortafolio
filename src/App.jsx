@@ -13,7 +13,6 @@ import {
   MessageCircle,
   Phone,
   Rocket,
-  Send,
   Users,
   X,
 } from 'lucide-react'
@@ -91,6 +90,47 @@ const projects = [
     image: coinpsiImage,
     stack: ['Plataforma web', 'Servicios', 'Producción'],
     site: 'https://coinpsi.mendotech.lat',
+  },
+]
+
+const contactMethods = [
+  {
+    title: 'Correo electrónico',
+    value: 'abdielmendoza2906@gmail.com',
+    href: 'mailto:abdielmendoza2906@gmail.com',
+    icon: <img src={emailIcon} alt="" />,
+    className: 'email',
+  },
+  {
+    title: 'WhatsApp',
+    value: '+507 6888-3551',
+    href: 'https://wa.me/50768883551',
+    icon: <MessageCircle size={22} />,
+    className: 'whatsapp',
+    external: true,
+  },
+  {
+    title: 'Teléfono',
+    value: '+507 6888-3551',
+    href: 'tel:+50768883551',
+    icon: <Phone size={22} />,
+    className: 'phone',
+  },
+  {
+    title: 'LinkedIn',
+    value: 'Abdiel Mendoza',
+    href: 'https://www.linkedin.com/in/abdiel-mendoza-8b476b320/',
+    icon: <img src={linkedinIcon} alt="" />,
+    className: 'linkedin',
+    external: true,
+  },
+  {
+    title: 'GitHub',
+    value: '@Mendo0729',
+    href: 'https://github.com/Mendo0729',
+    icon: <img src={githubIcon} alt="" />,
+    className: 'github',
+    external: true,
   },
 ]
 
@@ -296,24 +336,32 @@ export default function App() {
         </section>
 
         <section className="contact section-block" id="contacto">
-          <div className="contact-info">
+          <div className="contact-heading">
             <Label>Contacto</Label>
             <h2>Construyamos una solución</h2>
-            <p>¿Necesitas desarrollar una aplicación, automatizar un proceso o implementar una solución tecnológica? Estoy disponible para proyectos y nuevas oportunidades.</p>
-            <a href="mailto:abdielmendoza2906@gmail.com"><Mail size={17} /> abdielmendoza2906@gmail.com</a>
-            <a href="tel:+50768883551"><Phone size={17} /> +507 6888-3551</a>
-            <a href="https://wa.me/50768883551" target="_blank" rel="noreferrer"><MessageCircle size={17} /> WhatsApp</a>
-            <a href="https://www.linkedin.com/in/abdiel-mendoza-8b476b320/" target="_blank" rel="noreferrer"><img className="contact-social-icon" src={linkedinIcon} alt="" /> LinkedIn</a>
-            <a href="https://github.com/Mendo0729" target="_blank" rel="noreferrer"><img className="contact-social-icon" src={githubIcon} alt="" /> GitHub</a>
-            <span><MapPin size={17} /> Colón, Panamá</span>
-            <span><Users size={17} /> Disponible para colaborar</span>
+            <p>Estoy disponible para proyectos, colaboraciones y nuevas oportunidades. Puedes contactarme directamente por cualquiera de estos medios.</p>
+            <div className="availability-badge"><Users size={17} /> Disponible para colaborar</div>
+            <div className="location-note"><MapPin size={17} /> Colón, Panamá</div>
           </div>
-          <form className="contact-form" action="mailto:abdielmendoza2906@gmail.com" method="post" encType="text/plain">
-            <div className="form-row"><input name="nombre" placeholder="Nombre" required /><input type="email" name="email" placeholder="Email" required /></div>
-            <input name="asunto" placeholder="Asunto" required />
-            <textarea name="mensaje" placeholder="Mensaje" rows="5" required />
-            <button type="submit">Enviar mensaje <Send size={16} /></button>
-          </form>
+
+          <div className="contact-grid">
+            {contactMethods.map(method => (
+              <a
+                className={`contact-card ${method.className}`}
+                href={method.href}
+                key={method.title}
+                target={method.external ? '_blank' : undefined}
+                rel={method.external ? 'noreferrer' : undefined}
+              >
+                <span className="contact-card-icon">{method.icon}</span>
+                <span className="contact-card-copy">
+                  <strong>{method.title}</strong>
+                  <small>{method.value}</small>
+                </span>
+                <ArrowUpRight className="contact-card-arrow" size={18} />
+              </a>
+            ))}
+          </div>
         </section>
       </main>
 
