@@ -48,7 +48,6 @@ app.post('/api/contact', async (req, res) => {
 
   const { nombre, email, asunto, mensaje, website } = req.body || {}
 
-  // Campo señuelo para bots. Los usuarios reales no lo completan.
   if (website) return res.status(200).json({ message: 'Mensaje enviado correctamente.' })
 
   if (![nombre, email, asunto, mensaje].every(value => typeof value === 'string' && value.trim())) {
@@ -107,7 +106,7 @@ app.post('/api/contact', async (req, res) => {
 
 app.use(express.static(distPath))
 
-app.get('*', (_req, res) => {
+app.use((_req, res) => {
   res.sendFile(path.join(distPath, 'index.html'))
 })
 
