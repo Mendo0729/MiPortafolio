@@ -17,8 +17,6 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import heroImage from '../assets/img/hero-abdiel-animado.png'
-import portfolioImage from '../assets/img/Portafolio.png'
-import securePassImage from '../assets/img/SecurePass.png'
 import bakeryImage from '../assets/img/Casita-Bakery.png'
 import htmlIcon from '../assets/icon/html5.png'
 import cssIcon from '../assets/icon/css3.png'
@@ -70,26 +68,23 @@ const technologies = [
 
 const projects = [
   {
-    title: 'Mi Portafolio',
-    description: 'Portafolio profesional desarrollado con React para presentar mi experiencia, habilidades y proyectos.',
-    image: portfolioImage,
-    stack: ['React', 'Vite', 'CSS'],
-    repo: 'https://github.com/Mendo0729/MiPortafolio',
-  },
-  {
-    title: 'SecurePass',
-    description: 'Aplicación en Python para generar y evaluar contraseñas y consultar filtraciones conocidas.',
-    image: securePassImage,
-    stack: ['Python', 'Seguridad', 'HIBP'],
-    repo: 'https://github.com/Mendo0729/SecurePass',
-  },
-  {
     title: 'Casita Bakery',
-    description: 'Sistema web de gestión para apoyar la administración de un emprendimiento de repostería.',
+    description: 'Emprendimiento propio de repostería con presencia digital y sistema web para mostrar productos, recibir pedidos y facilitar la comunicación con los clientes.',
     image: bakeryImage,
-    stack: ['JavaScript', 'HTML', 'CSS'],
-    repo: 'https://github.com/Mendo0729/Casita_Bakery',
-    demo: 'https://mendo0729.github.io/Casita_Bakery/',
+    stack: ['Emprendimiento', 'E-commerce', 'Web'],
+    site: 'https://casitabakery.online',
+  },
+  {
+    title: 'SharedWallet',
+    description: 'Aplicación web para administrar gastos y finanzas compartidas, registrar movimientos, organizar balances y facilitar el control financiero entre varios usuarios.',
+    stack: ['Finanzas', 'Aplicación web', 'Cloud'],
+    site: 'https://sharedwallet.mendotech.lat',
+  },
+  {
+    title: 'Coinpsi',
+    description: 'Plataforma web corporativa orientada a presentar servicios, programas y recursos de psicología de forma clara, accesible y profesional para sus usuarios.',
+    stack: ['Plataforma web', 'Servicios', 'Producción'],
+    site: 'https://coinpsi.mendotech.lat',
   },
 ]
 
@@ -206,14 +201,17 @@ export default function App() {
           <div className="project-grid">
             {projects.map((project, index) => (
               <motion.article className="project-card" key={project.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .08 }}>
-                <img className="project-cover" src={project.image} alt={project.title} />
+                {project.image ? (
+                  <img className="project-cover" src={project.image} alt={project.title} />
+                ) : (
+                  <div className="project-cover project-placeholder"><Code2 size={42} /><span>{project.title}</span></div>
+                )}
                 <div className="project-body">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <div className="project-tags">{project.stack.map(tag => <span key={tag}>{tag}</span>)}</div>
                   <div className="project-actions">
-                    <a href={project.repo} target="_blank" rel="noreferrer">Código <ArrowUpRight size={16} /></a>
-                    {project.demo && <a href={project.demo} target="_blank" rel="noreferrer">Demo <ArrowUpRight size={16} /></a>}
+                    <a href={project.site} target="_blank" rel="noreferrer">Visitar sitio <ArrowUpRight size={16} /></a>
                   </div>
                 </div>
               </motion.article>
