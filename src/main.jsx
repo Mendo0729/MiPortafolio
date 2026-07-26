@@ -4,6 +4,7 @@ import App from './App'
 import './index.css'
 import './hero-fix.css'
 import './navigation-fix.css'
+import './contact-form.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
