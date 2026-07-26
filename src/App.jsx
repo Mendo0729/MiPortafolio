@@ -41,9 +41,9 @@ const navItems = [
 ]
 
 const values = [
-  { icon: Code2, title: 'Enfoque', text: 'Soluciones estables, seguras y orientadas a las necesidades del negocio.' },
-  { icon: Rocket, title: 'Experiencia', text: 'Administración de plataformas empresariales on-premise y cloud.' },
-  { icon: Lightbulb, title: 'Aprendizaje', text: 'Actualización constante en infraestructura, bases de datos y desarrollo.' },
+  { icon: Code2, title: 'Desarrollo', text: 'Creo aplicaciones web, automatizaciones y soluciones digitales funcionales y mantenibles.' },
+  { icon: Rocket, title: 'Infraestructura', text: 'Administro plataformas empresariales on-premise y cloud con enfoque en continuidad y seguridad.' },
+  { icon: Lightbulb, title: 'Integración', text: 'Combino desarrollo, datos e infraestructura para resolver necesidades reales del negocio.' },
 ]
 
 const programmingLanguages = [
@@ -71,21 +71,21 @@ const technologies = [
 const projects = [
   {
     title: 'Mi Portafolio',
-    description: 'Portafolio profesional para presentar mi experiencia, habilidades y proyectos.',
+    description: 'Portafolio profesional desarrollado con React para presentar mi experiencia, habilidades y proyectos.',
     image: portfolioImage,
     stack: ['React', 'Vite', 'CSS'],
     repo: 'https://github.com/Mendo0729/MiPortafolio',
   },
   {
     title: 'SecurePass',
-    description: 'Aplicación para generar y evaluar contraseñas y consultar filtraciones conocidas.',
+    description: 'Aplicación en Python para generar y evaluar contraseñas y consultar filtraciones conocidas.',
     image: securePassImage,
     stack: ['Python', 'Seguridad', 'HIBP'],
     repo: 'https://github.com/Mendo0729/SecurePass',
   },
   {
     title: 'Casita Bakery',
-    description: 'Sistema de gestión para apoyar la administración de un emprendimiento de repostería.',
+    description: 'Sistema web de gestión para apoyar la administración de un emprendimiento de repostería.',
     image: bakeryImage,
     stack: ['JavaScript', 'HTML', 'CSS'],
     repo: 'https://github.com/Mendo0729/Casita_Bakery',
@@ -135,8 +135,8 @@ export default function App() {
           <motion.div className="hero-content" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65 }}>
             <span className="hello">¡Hola! Soy</span>
             <h1>Abdiel Mendoza</h1>
-            <h2>Analista de Sistemas</h2>
-            <p>Administro, soporte y monitoreo plataformas tecnológicas empresariales en entornos on-premise y cloud, con enfoque en continuidad, seguridad y disponibilidad.</p>
+            <h2>Analista de Sistemas & Desarrollador</h2>
+            <p>Combino desarrollo de software, automatización e infraestructura para crear soluciones tecnológicas seguras, funcionales y orientadas a resolver necesidades reales del negocio.</p>
             <div className="hero-buttons">
               <a href="#proyectos" className="primary-button">Ver proyectos <ArrowRight size={17} /></a>
               <a href="#contacto" className="outline-button">Contáctame <Mail size={17} /></a>
@@ -157,9 +157,10 @@ export default function App() {
         <section className="about section-block" id="sobre-mi">
           <div className="about-copy">
             <Label>Sobre mí</Label>
-            <h2>Conoce un poco más</h2>
-            <p>Analista de Sistemas con experiencia en la administración, soporte y monitoreo de plataformas tecnológicas en entornos on-premise y cloud.</p>
-            <p>Trabajo con Oracle Linux, Oracle Database, Oracle WebLogic Server, Oracle Forms & Reports, Oracle Cloud Infrastructure y Amazon Web Services. He colaborado en proyectos de migración, implementación, actualización y soporte de ambientes empresariales, incluyendo Oracle ASM, Data Guard, middleware Oracle y soluciones de alta disponibilidad.</p>
+            <h2>Desarrollo e infraestructura en un mismo perfil</h2>
+            <p>Soy Analista de Sistemas y desarrollador freelancer. Creo aplicaciones web, automatizaciones y soluciones digitales, y también administro, soporte y monitoreo plataformas tecnológicas empresariales en entornos on-premise y cloud.</p>
+            <p>Trabajo con React, JavaScript, Python, SQL, Oracle Linux, Oracle Database, Oracle WebLogic Server, Oracle Forms & Reports, OCI y AWS. Esta combinación me permite comprender una solución desde el código y los datos hasta su despliegue, operación, seguridad y disponibilidad.</p>
+            <p>He participado en proyectos de desarrollo, mantenimiento, migración, implementación, actualización y soporte, incluyendo Oracle ASM, Data Guard, middleware Oracle, alta disponibilidad y ambientes críticos de producción.</p>
           </div>
           <div className="value-grid">
             {values.map(({ icon: Icon, title, text }) => (
@@ -181,7 +182,7 @@ export default function App() {
               <Code2 size={19} />
               <div>
                 <h3>Lenguajes que manejo</h3>
-                <p>Lenguajes de programación y tecnologías base utilizadas en mis proyectos.</p>
+                <p>Lenguajes utilizados para desarrollar interfaces, aplicaciones, automatizaciones y consultas de datos.</p>
               </div>
             </div>
             <SkillGrid items={programmingLanguages} />
@@ -192,7 +193,7 @@ export default function App() {
               <BookOpen size={19} />
               <div>
                 <h3>Tecnologías y plataformas</h3>
-                <p>Herramientas, plataformas cloud, sistemas operativos e infraestructura con los que he trabajado.</p>
+                <p>Frameworks, herramientas de desarrollo, plataformas cloud, bases de datos, virtualización y sistemas operativos con los que he trabajado.</p>
               </div>
             </div>
             <SkillGrid items={technologies} />
@@ -201,7 +202,7 @@ export default function App() {
 
         <section className="projects section-block" id="proyectos">
           <Label>Proyectos</Label>
-          <h2>Algunos de mis trabajos</h2>
+          <h2>Soluciones que he desarrollado</h2>
           <div className="project-grid">
             {projects.map((project, index) => (
               <motion.article className="project-card" key={project.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .08 }}>
@@ -239,7 +240,7 @@ export default function App() {
               <div>
                 <h3>Desarrollador Freelancer</h3>
                 <p><strong>Trabajo independiente</strong></p>
-                <p>Desarrollo de aplicaciones web, automatizaciones y soluciones digitales para proyectos personales, pequeños negocios y clientes independientes. También realizo mantenimiento, soporte técnico y mejoras evolutivas sobre sistemas existentes.</p>
+                <p>Desarrollo de aplicaciones web, automatizaciones y soluciones digitales para proyectos personales, pequeños negocios y clientes independientes. También realizo mantenimiento, soporte técnico, despliegues y mejoras evolutivas sobre sistemas existentes.</p>
               </div>
               <time>2022 — actualidad</time>
             </div>
@@ -258,8 +259,8 @@ export default function App() {
         <section className="contact section-block" id="contacto">
           <div className="contact-info">
             <Label>Contacto</Label>
-            <h2>Hablemos</h2>
-            <p>¿Tienes un proyecto en mente o quieres colaborar? Estoy disponible para nuevas oportunidades.</p>
+            <h2>Construyamos una solución</h2>
+            <p>¿Necesitas desarrollar una aplicación, automatizar un proceso o implementar una solución tecnológica? Estoy disponible para proyectos y nuevas oportunidades.</p>
             <a href="mailto:abdielmendoza2906@gmail.com"><Mail size={17} /> abdielmendoza2906@gmail.com</a>
             <span><MapPin size={17} /> Colón, Panamá</span>
             <span><Users size={17} /> Disponible para colaborar</span>
