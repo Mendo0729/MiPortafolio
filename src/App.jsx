@@ -41,9 +41,9 @@ const navItems = [
 ]
 
 const values = [
-  { icon: Code2, title: 'Enfoque', text: 'Código limpio, eficiente y escalable.' },
-  { icon: Rocket, title: 'Pasión', text: 'Me encanta resolver problemas y crear soluciones útiles.' },
-  { icon: Lightbulb, title: 'Aprendizaje', text: 'Siempre explorando nuevas tecnologías y mejorando cada día.' },
+  { icon: Code2, title: 'Enfoque', text: 'Soluciones estables, seguras y orientadas a las necesidades del negocio.' },
+  { icon: Rocket, title: 'Experiencia', text: 'Administración de plataformas empresariales on-premise y cloud.' },
+  { icon: Lightbulb, title: 'Aprendizaje', text: 'Actualización constante en infraestructura, bases de datos y desarrollo.' },
 ]
 
 const programmingLanguages = [
@@ -136,7 +136,7 @@ export default function App() {
             <span className="hello">¡Hola! Soy</span>
             <h1>Abdiel Mendoza</h1>
             <h2>Analista de Sistemas</h2>
-            <p>Apasionado por crear soluciones digitales modernas, funcionales y orientadas a resolver problemas reales.</p>
+            <p>Administro, soporte y monitoreo plataformas tecnológicas empresariales en entornos on-premise y cloud, con enfoque en continuidad, seguridad y disponibilidad.</p>
             <div className="hero-buttons">
               <a href="#proyectos" className="primary-button">Ver proyectos <ArrowRight size={17} /></a>
               <a href="#contacto" className="outline-button">Contáctame <Mail size={17} /></a>
@@ -160,7 +160,8 @@ export default function App() {
           <div className="about-copy">
             <Label>Sobre mí</Label>
             <h2>Conoce un poco más</h2>
-            <p>Soy estudiante de Desarrollo de Software y analista de sistemas con experiencia en desarrollo, bases de datos, soporte e infraestructura. Disfruto convertir necesidades en soluciones claras, funcionales y mantenibles.</p>
+            <p>Analista de Sistemas con experiencia en la administración, soporte y monitoreo de plataformas tecnológicas en entornos on-premise y cloud.</p>
+            <p>Trabajo con Oracle Linux, Oracle Database, Oracle WebLogic Server, Oracle Forms & Reports, Oracle Cloud Infrastructure y Amazon Web Services. He colaborado en proyectos de migración, implementación, actualización y soporte de ambientes empresariales, incluyendo Oracle ASM, Data Guard, middleware Oracle y soluciones de alta disponibilidad.</p>
           </div>
           <div className="value-grid">
             {values.map(({ icon: Icon, title, text }) => (
@@ -227,18 +228,22 @@ export default function App() {
           <div className="timeline">
             <div className="timeline-item">
               <span className="timeline-dot" />
-              <div><h3>Analista de Sistemas</h3><p>Soporte, bases de datos, infraestructura y desarrollo de soluciones tecnológicas.</p></div>
-              <time>Actualidad</time>
+              <div>
+                <h3>Analista de Sistemas</h3>
+                <p><strong>Solusoft · Jornada completa</strong></p>
+                <p>Administración, soporte y monitoreo de plataformas tecnológicas empresariales en entornos on-premise y cloud. Gestión de Oracle Linux, Oracle Database, Oracle WebLogic Server, Oracle Forms & Reports, OCI y AWS.</p>
+                <p>Participación en migraciones, implementaciones, actualizaciones, aplicación de parches, resolución de incidencias y soporte de soluciones de alta disponibilidad, Oracle ASM, Data Guard y middleware Oracle.</p>
+              </div>
+              <time>Sept. 2025 — actualidad</time>
             </div>
             <div className="timeline-item">
               <span className="timeline-dot" />
-              <div><h3>Extractor de Datos</h3><p>Multipuntos Tecnología S.A.</p></div>
-              <time>2024</time>
-            </div>
-            <div className="timeline-item">
-              <span className="timeline-dot" />
-              <div><h3>Desarrollo freelance</h3><p>Aplicaciones web, soporte técnico y soluciones para pequeños negocios.</p></div>
-              <time>2022 — presente</time>
+              <div>
+                <h3>Extractor de Datos</h3>
+                <p><strong>Multipuntos Tecnologías S.A. · Jornada completa</strong></p>
+                <p>Extracción y validación de datos geográficos utilizando software especializado, asegurando la integridad, precisión y calidad de la información recopilada.</p>
+              </div>
+              <time>Sept. 2024 — dic. 2024</time>
             </div>
           </div>
         </section>
