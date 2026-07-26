@@ -46,15 +46,26 @@ const values = [
   { icon: Lightbulb, title: 'Aprendizaje', text: 'Siempre explorando nuevas tecnologías y mejorando cada día.' },
 ]
 
-const skills = [
+const programmingLanguages = [
   { name: 'HTML', image: htmlIcon },
   { name: 'CSS', image: cssIcon },
   { name: 'JavaScript', image: jsIcon },
-  { name: 'React', label: '⚛' },
-  { name: 'Node.js', label: 'JS' },
   { name: 'Python', image: pythonIcon },
   { name: 'Java', image: javaIcon },
   { name: 'SQL', image: sqlIcon },
+]
+
+const technologies = [
+  { name: 'React', label: '⚛' },
+  { name: 'Node.js', label: 'JS' },
+  { name: 'AWS', label: 'AWS' },
+  { name: 'Oracle Cloud', label: 'OCI' },
+  { name: 'Linux', label: '⌘' },
+  { name: 'Oracle Database', label: 'DB' },
+  { name: 'Git', label: 'Git' },
+  { name: 'Docker', label: 'DK' },
+  { name: 'VMware', label: 'VM' },
+  { name: 'Render', label: 'R' },
 ]
 
 const projects = [
@@ -84,6 +95,19 @@ const projects = [
 
 function Label({ children }) {
   return <div className="section-label"><span />{children}</div>
+}
+
+function SkillGrid({ items }) {
+  return (
+    <div className="skills-grid">
+      {items.map(skill => (
+        <div className="skill-card" key={skill.name}>
+          {skill.image ? <img src={skill.image} alt={skill.name} /> : <span className="skill-symbol">{skill.label}</span>}
+          <span>{skill.name}</span>
+        </div>
+      ))}
+    </div>
+  )
 }
 
 export default function App() {
@@ -151,14 +175,28 @@ export default function App() {
 
         <section className="skills section-block" id="habilidades">
           <Label>Habilidades</Label>
-          <h2>Tecnologías que domino</h2>
-          <div className="skills-grid">
-            {skills.map(skill => (
-              <div className="skill-card" key={skill.name}>
-                {skill.image ? <img src={skill.image} alt={skill.name} /> : <span className="skill-symbol">{skill.label}</span>}
-                <span>{skill.name}</span>
+          <h2>Conocimientos técnicos</h2>
+
+          <div className="skill-group">
+            <div className="skill-group-heading">
+              <Code2 size={19} />
+              <div>
+                <h3>Lenguajes que manejo</h3>
+                <p>Lenguajes de programación y tecnologías base utilizadas en mis proyectos.</p>
               </div>
-            ))}
+            </div>
+            <SkillGrid items={programmingLanguages} />
+          </div>
+
+          <div className="skill-group">
+            <div className="skill-group-heading">
+              <BookOpen size={19} />
+              <div>
+                <h3>Tecnologías y plataformas</h3>
+                <p>Herramientas, plataformas cloud, sistemas operativos e infraestructura con los que he trabajado.</p>
+              </div>
+            </div>
+            <SkillGrid items={technologies} />
           </div>
         </section>
 
